@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet2.css">
+    <title>hack2hackapp</title>
+    <script src="test1.js"></script>
+  </head>
+  <body>
+      <div class="header">
+      <div class="header-logo">現役プレイヤー</div>
+      <div class="header-list">
+        <ul>
+          <li><a href="index.html">Top</a></li>
+          <li><a href="Prologue.html">Prologue</a></li>
+          <li>How to</a></li>
+        </ul>
+     </div>
+    </div>
+    <!--マウスストーカ－始-->
+<script type="text/javascript">
+  (function (){  //即時関数で囲んでグローバル変数を消すため、この行はこのままで
+  
+  var mga="カイル君zito.gif";  //★画像指定
+  var hx=10;           //★表示位置 x座標。マウスと画像の横位置。マイナス値で左側
+  var hy=20;           //★表示位置 y座標。マウスと画像の縦位置。マイナス値で上側
+  var spd=10;          //★原本10。マウスと画像の速度。小さいほど速い
+  var st=50;     　　　//★原本20。マウスと画像の追いつき変化速度。小さいほど変化が小さい(離れにくい)
+  
+  //指定ここまで----------------------------------------------------------------------------------------------
+  var ix=0,iy=0,mx=-200, my=-200;
+  document.write("<img src="+mga+" id='Mo' style='position:absolute;'>");
+  document.onmousemove=function (e){ mx=e.pageX+hx; my=e.pageY+hy;}
+  function Run() {
+  var w=window.innerWidth-Mo.offsetWidth-18;//無限落下防止
+  var h=window.pageYOffset+window.innerHeight-Mo.offsetHeight-18;//無限落下防止
+  var ob=document.getElementById("Mo").style;
+  ix+=(mx-ix)/st; iy+=(my-iy)/st;
+  ob.left=Math.min(w,ix)+"px"; ob.top=Math.min(h,iy)+"px";
+  setTimeout(Run,spd);
+  }
+  Run();
+  }());//即時関数終了
+  // --></script>
+  <!--マウスストーカー終-->
+    <div class="main">
+        <h1>本アプリの使い方・機能</h1>
+        <br>
+        <div class="bdcr">
+        <h2><span>①</span>パソコンを起動すると自動的に実行される</h2>
+        </div>
+        <h3>パソコンを毎日触る私たちでも、これで忘れることなく毎日コロナ対策が可能です！</h3>
+        <br>
+        <h2><span>②</span>コロナ対策に関することをランダムで聞いてくれる</h2>
+        <h3>コロナ対策は多岐にわたります。<br>
+            以下の●つから起動時にランダム実行を行います。
+            これで対策が1つに偏ることはありません！</h3>
+            <ul>
+                <li><b>+ </b><a class="white">換気を促す</li>
+                  <p>エンジニアは集中して基本の換気を忘れることもしばしば…<br>そんな貴方に！</p>
+                <li><b>+ </b><a class="white">体温を聞く</li>
+                  <p>平熱であれば褒めてくれるし、熱がある場合には体温を受理せずにずっと聞き続けてくれます！<br>
+                     これで毎日忘れずに健康管理を行うことが出来ます！</p>
+                <li><b>+ </b><a class="white">動画を流す</li>
+                  <p>やはり日本国民としては首都の様子も気になりますよね…<br>
+                小池都知事の動画を流してくれることで、東京の様子も常日頃気に掛けることが出来ます<br>
+                また、コロナ対策には手洗いも欠かせません！！たまに手洗いの動画も流れます<br></p>
+                <li><b>+ </b><a class="white">ページを強制的に移動する</li>
+                  <p>コロナ対策に必須な消毒液のページに飛ばしてくれます！<br>
+                    これであなたもアルコール消毒を切らしてしまうことはありません！</p>
+            </ul>
+
+
+    </div>
+    <div class="footer">
+        <div class="footer-logo">Presented by_現役プレイヤー</div>
+        <div class="footer-list">
+        </div>
+      </div>
+    </body>
+  </html>
